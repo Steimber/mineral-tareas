@@ -176,10 +176,11 @@ export function RemindersSkeleton() {
           <Sk className="sk-text sk-w-100" />
           <Sk className="sk-text sk-w-70" />
         </div>
+        {/* One card and no pager: most people have few reminders, and a skeleton taller than the real page made the
+            page (and, on iPhone, the fixed tab bar) jump up when it loaded. More reminders only grow below the fold. */}
         <ul className="list">
-          <Repeat times={4}>{(i) => <ReminderCardSkeleton key={i} />}</Repeat>
+          <ReminderCardSkeleton />
         </ul>
-        <PagerSkeleton />
       </section>
       <section className="card item section">
         <Sk className="sk-h2 sk-w-50" />
